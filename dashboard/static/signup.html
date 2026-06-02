@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDSTRYKE — Operator Recruitment</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- URGENCY BAR -->
+    <div class="urgency-bar">
+        <div class="urgency-track">
+            <span class="urgency-item">🔴 INDIA ALERT: Average data breach cost in India hit ₹22 CRORE in 2026 (IBM Report)</span>
+            <span class="urgency-item">🔴 70% of breached Indian orgs paid ransom — The Hindu, 2025</span>
+            <span class="urgency-item">🟡 CERT-In now mandates annual security audits for all regulated entities</span>
+            <span class="urgency-item">🔴 DPDPA penalties: up to ₹250 crore per violation</span>
+            <span class="urgency-item">Are you protected?</span>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <div class="logo-icon-small">⧩</div>
+                    <span class="logo-text-nav">REDSTRYKE</span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="/login" class="btn btn-ghost">[ LOGIN ]</a>
+                <a href="/" class="btn btn-red">[ RETURN TO SITE ]</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SIGNUP -->
+    <div class="auth-page">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <div class="auth-logo-icon">⧩</div>
+                <div class="auth-title">OPERATOR RECRUITMENT</div>
+                <div class="auth-subtitle">Request your REDSTRYKE operator credentials</div>
+            </div>
+
+            <!-- Step Progress -->
+            <div class="auth-steps">
+                <div class="auth-step active" id="step-1">1</div>
+                <div class="auth-step" id="step-2">2</div>
+                <div class="auth-step" id="step-3">3</div>
+                <div class="auth-step" id="step-4">4</div>
+            </div>
+
+            <!-- Step 1: Identity -->
+            <div class="auth-step-content active" id="signup-step-1">
+                <div class="auth-field">
+                    <label>OPERATOR CALLSIGN</label>
+                    <input type="text" class="auth-input" id="signup-name" placeholder="Your full name" autocomplete="name">
+                </div>
+                <div class="auth-field">
+                    <label>UNIT</label>
+                    <input type="text" class="auth-input" id="signup-org" placeholder="Organization name" autocomplete="organization">
+                </div>
+                <div class="auth-field">
+                    <label>ROLE</label>
+                    <select class="auth-input" id="signup-role">
+                        <option value="CISO">CISO</option>
+                        <option value="Red Team Lead">Red Team Lead</option>
+                        <option value="Penetration Tester">Penetration Tester</option>
+                        <option value="Security Researcher">Security Researcher</option>
+                        <option value="Founder">Founder</option>
+                        <option value="IT Manager">IT Manager</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="auth-field">
+                    <label>SECURE LINE</label>
+                    <input type="tel" class="auth-input" id="signup-phone" placeholder="+91 98765 43210" autocomplete="tel">
+                </div>
+                <div class="auth-field">
+                    <label class="checkbox-item" style="display:flex;border:none;padding:0;font-size:0.8rem;">
+                        <input type="checkbox" id="signup-whatsapp" checked>
+                        Send critical alerts to this WhatsApp number
+                    </label>
+                </div>
+                <button class="auth-btn auth-btn-primary" onclick="nextSignupStep()">[ PROCEED → ]</button>
+            </div>
+
+            <!-- Step 2: Credentials -->
+            <div class="auth-step-content" id="signup-step-2">
+                <div class="auth-field">
+                    <label>SECURE COMMS ADDRESS</label>
+                    <input type="email" class="auth-input" id="signup-email" placeholder="operator@organisation.in" autocomplete="email">
+                </div>
+                <div class="auth-field">
+                    <label>CIPHER KEY</label>
+                    <input type="password" class="auth-input" id="signup-password" placeholder="Min. 10 characters" oninput="checkPasswordStrength(this.value)" autocomplete="new-password">
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                    <div class="strength-label"></div>
+                </div>
+                <div class="auth-field">
+                    <label>CONFIRM CIPHER KEY</label>
+                    <input type="password" class="auth-input" id="signup-confirm" placeholder="Re-enter cipher key" autocomplete="new-password">
+                </div>
+                <button class="auth-btn auth-btn-primary" onclick="nextSignupStep()">[ PROCEED → ]</button>
+                <div class="auth-links" style="margin-top:12px;">
+                    <a href="#" onclick="signupStep=1;document.querySelectorAll('.auth-step-content').forEach(e=>e.classList.remove('active'));document.getElementById('signup-step-1').classList.add('active');return false;">← BACK</a>
+                </div>
+            </div>
+
+            <!-- Step 3: Mission Profile -->
+            <div class="auth-step-content" id="signup-step-3">
+                <div class="auth-field">
+                    <label>COMPANY SIZE</label>
+                    <div class="radio-card-group">
+                        <div class="radio-card" onclick="selectRadio(this)">Solo</div>
+                        <div class="radio-card" onclick="selectRadio(this)">2–10</div>
+                        <div class="radio-card" onclick="selectRadio(this)">11–50</div>
+                        <div class="radio-card" onclick="selectRadio(this)">51–200</div>
+                        <div class="radio-card" onclick="selectRadio(this)">201–1000</div>
+                        <div class="radio-card" onclick="selectRadio(this)">1000+</div>
+                    </div>
+                </div>
+                <div class="auth-field">
+                    <label>PRIMARY CONCERNS</label>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item" onclick="toggleCheckboxItem(this)"><input type="checkbox" value="Web Apps" hidden> Web Apps</div>
+                        <div class="checkbox-item" onclick="toggleCheckboxItem(this)"><input type="checkbox" value="Network & AD" hidden> Network &amp; AD</div>
+                        <div class="checkbox-item" onclick="toggleCheckboxItem(this)"><input type="checkbox" value="Cloud" hidden> Cloud</div>
+                        <div class="checkbox-item" onclick="toggleCheckboxItem(this)"><input type="checkbox" value="Social Engineering" hidden> Social Engineering</div>
+                        <div class="checkbox-item" onclick="toggleCheckboxItem(this)"><input type="checkbox" value="Compliance" hidden> Compliance</div>
+                        <div class="checkbox-item" onclick="toggleCheckboxItem(this)"><input type="checkbox" value="All of the above" hidden> All of the above</div>
+                    </div>
+                </div>
+                <div class="auth-field">
+                    <label>COMPLIANCE REQUIREMENT</label>
+                    <select class="auth-input" name="compliance">
+                        <option value="CERT-In">CERT-In</option>
+                        <option value="RBI">RBI</option>
+                        <option value="SEBI">SEBI</option>
+                        <option value="DPDPA">DPDPA</option>
+                        <option value="SOC 2">SOC 2</option>
+                        <option value="ISO 27001">ISO 27001</option>
+                        <option value="None yet">None yet</option>
+                    </select>
+                </div>
+                <div class="auth-field">
+                    <label>HOW DID YOU FIND REDSTRYKE?</label>
+                    <select class="auth-input" id="signup-referral">
+                        <option value="Google">Google</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="Referral">Referral</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button class="auth-btn auth-btn-primary" onclick="nextSignupStep()">[ PROCEED → ]</button>
+                <div class="auth-links" style="margin-top:12px;">
+                    <a href="#" onclick="signupStep=2;document.querySelectorAll('.auth-step-content').forEach(e=>e.classList.remove('active'));document.getElementById('signup-step-2').classList.add('active');return false;">← BACK</a>
+                </div>
+            </div>
+
+            <!-- Step 4: Access Granted -->
+            <div class="auth-step-content" id="signup-step-4">
+                <div class="access-granted">
+                    <div class="access-granted-icon">⧩</div>
+                    <div class="operator-badge">
+                        <div class="callsign">OPERATOR</div>
+                        <div class="unit">REDSTRYKE TACTICAL SYSTEMS</div>
+                    </div>
+                    <h2>ACCESS GRANTED</h2>
+                    <p>Check your email to verify your operator credentials</p>
+                    <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:16px;">
+                        Welcome aboard, <span id="signup-display-name"></span>
+                    </p>
+                    <a href="/" class="auth-btn auth-btn-primary" style="text-decoration:none;display:block;text-align:center;">[ PROCEED TO BRIEFING ]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    <script>
+        document.querySelector('.urgency-track').innerHTML += document.querySelector('.urgency-track').innerHTML;
+    </script>
+</body>
+</html>

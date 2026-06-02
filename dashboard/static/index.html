@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDSTRYKE — India's Most Advanced AI Red Team</title>
+    <meta name="description" content="India's most advanced autonomous AI red teamer. Built for Indian businesses — from Bengaluru startups to Mumbai's biggest banks. CERT-In, RBI, SEBI, DPDPA compliant.">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="REDSTRYKE — India's Most Advanced AI Red Team">
+    <meta property="og:description" content="Autonomous AI red teaming for Indian businesses. 11 AI agents. Continuous coverage. CERT-In, DPDPA, RBI, SEBI compliant.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://redstryke.in">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="REDSTRYKE — India's Most Advanced AI Red Team">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23dc2626'/><text x='6' y='24' font-family='monospace' font-weight='800' font-size='20' fill='white'>⧩</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23dc2626'/><text x='6' y='24' font-family='monospace' font-weight='800' font-size='20' fill='white'>⧩</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+    <!-- URGENCY BAR -->
+    <div class="urgency-bar" id="urgencyBar">
+        <div class="urgency-track">
+            <span class="urgency-item">🔴 INDIA ALERT: Average data breach cost in India hit ₹22 CRORE in 2026 (IBM Report)</span>
+            <span class="urgency-item">🔴 70% of breached Indian orgs paid ransom — The Hindu, 2025</span>
+            <span class="urgency-item">🟡 CERT-In now mandates annual security audits for all regulated entities</span>
+            <span class="urgency-item">🔴 DPDPA penalties: up to ₹250 crore per violation</span>
+            <span class="urgency-item">Are you protected?</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <div class="logo-icon-small">⧩</div>
+                    <span class="logo-text-nav">REDSTRYKE</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#why-exist">The India Problem</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#why-india">Why India</a>
+                    <a href="/login" class="nav-login-btn">LOGIN</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="/login" class="btn btn-ghost">[ LOGIN ]</a>
+                <a href="/signup" class="btn btn-red">[ REQUEST BRIEFING ]</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <canvas id="particleCanvas"></canvas>
+        <div class="gradient-orb"></div>
+        <div class="gradient-orb-2"></div>
+        <div class="hero-bg-scan"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🇮🇳 INDIA'S FIRST AUTONOMOUS AI RED TEAM</div>
+            <h1 class="hero-title">
+                INDIA'S MOST ADVANCED<br>
+                <span class="text-red">AI RED TEAM.</span><br>
+                WORLD-CLASS ATTACKS.<br>
+                <span class="text-green">STARTUP-FRIENDLY PRICE.</span>
+            </h1>
+            <p class="hero-subtitle">
+                The only autonomous AI red teamer built for Indian businesses —<br>
+                from Bengaluru startups to Mumbai's biggest banks.
+            </p>
+            <div class="hero-statement">
+                <p>While you read this, a threat actor is scanning your network somewhere in the world.</p>
+                <p><span class="text-red">REDSTRYKE</span> is already inside yours — finding every crack before they do.</p>
+                <p class="text-green">Autonomous. Unstoppable. Built for India.</p>
+            </div>
+            <div class="hero-actions">
+                <a href="#pricing" class="btn btn-red btn-large glitch" data-text="[ DEPLOY RECON — ₹24,999 ]">[ DEPLOY RECON — ₹24,999 ]</a>
+                <a href="#pricing" class="btn btn-outline-red btn-large">[ EXPLORE ASSAULT ]</a>
+            </div>
+            <p class="hero-credibility">
+                Trusted by Indian startups, fintechs, and enterprises<br>
+                under <span class="glossary-trigger" data-term="certin">CERT-In</span> · <span class="glossary-trigger" data-term="rbi">RBI IT Framework</span> · <span class="glossary-trigger" data-term="sebi">SEBI CSCRF</span> · <span class="glossary-trigger" data-term="dpdpa">DPDPA</span>
+            </p>
+            <p class="hero-india-badge">
+                🇮🇳 Built in India · Serving India · Protecting Indian data<br>
+                Payments in INR · GST invoices · Support in IST timezone
+            </p>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('stats')?.scrollIntoView({behavior:'smooth'})">
+            <span class="scroll-indicator-text">Scroll</span>
+            <div class="scroll-indicator-arrow"></div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION (Sourced) -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid-5">
+                <div class="stat-item">
+                    <div class="stat-number text-red" data-count="220000000">₹22 CRORE</div>
+                    <div class="stat-desc">Average Indian data breach cost in 2025</div>
+                    <div class="stat-source">Source: IBM Cost of a Data Breach Report 2025</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-red">70%</div>
+                    <div class="stat-desc">Indian orgs that paid ransom after breach</div>
+                    <div class="stat-source">Source: The Hindu, 2025</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-amber">29.44L</div>
+                    <div class="stat-desc">Cyber incidents handled by CERT-In in 2025</div>
+                    <div class="stat-source">Source: CERT-In Annual Report 2025</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-red">₹250 CRORE</div>
+                    <div class="stat-desc">Maximum DPDPA Act penalty per violation</div>
+                    <div class="stat-source">Source: DPDPA Act 2023, effective Nov 2025</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-green">&lt;4 MIN</div>
+                    <div class="stat-desc">REDSTRYKE time from recon to first finding</div>
+                    <div class="stat-source">Internal benchmark, 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST & SOCIAL PROOF SECTION -->
+    <section class="section testimonials-section" id="trust">
+        <div class="container">
+            <div class="testimonials-layout">
+                <div>
+                    <h2 class="section-title" style="text-align:left;margin-bottom:20px;">TRUSTED BY <span class="text-red">INDIA'S BEST</span></h2>
+                    <div class="client-logos">
+                        <span class="client-logo-placeholder">[ FINANCE ]</span>
+                        <span class="client-logo-placeholder">[ HEALTHCARE ]</span>
+                        <span class="client-logo-placeholder">[ FINTECH ]</span>
+                        <span class="client-logo-placeholder">[ E-COMMERCE ]</span>
+                        <span class="client-logo-placeholder">[ GOVT ]</span>
+                        <span class="client-logo-placeholder">[ BFSI ]</span>
+                    </div>
+                    <div class="live-counter-section">
+                        <div class="live-counter-number">
+                            <span class="live-counter-pulse"></span>
+                            <span id="liveCounter">2,847</span>
+                        </div>
+                        <div class="live-counter-label">Attacks simulated by REDSTRYKE today — and counting</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="testimonial-carousel">
+                        <div class="testimonial-track">
+                            <div class="testimonial-slide">
+                                <div class="testimonial-quote">REDSTRYKE found a forgotten staging subdomain in under 2 minutes that had full production DB access. Our manual pentest the quarter before missed it entirely.</div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">RK</div>
+                                    <div>
+                                        <div class="testimonial-name">Rohan Khanna</div>
+                                        <div class="testimonial-role">CISO, Indian Fintech Unicorn</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="testimonial-quote">The SIEGE plan runs 24/7 and alerts us on WhatsApp when something critical turns up. We caught an exposed S3 bucket within an hour of it being misconfigured.</div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">AP</div>
+                                    <div>
+                                        <div class="testimonial-name">Dr. Anjali Patel</div>
+                                        <div class="testimonial-role">VP Engineering, HealthTech India</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-slide">
+                                <div class="testimonial-quote">We went from a ₹6L annual pentest to REDSTRYKE ASSAULT at ₹75K and got better coverage, CERT-In ready reports, and results in 5 days. It's not even a comparison.</div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">SM</div>
+                                    <div>
+                                        <div class="testimonial-name">Siddharth Mehta</div>
+                                        <div class="testimonial-role">CTO, Mumbai-based Fintech</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous">&larr;</button>
+                            <div class="carousel-dots">
+                                <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+                                <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+                                <button class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+                            </div>
+                            <button class="carousel-arrow carousel-arrow-next" aria-label="Next">&rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1 — THE INDIA PROBLEM -->
+    <section class="section section-dark" id="why-exist">
+        <div class="container">
+            <h2 class="section-title">THE INDIA <span class="text-red">PROBLEM</span></h2>
+            <div class="why-grid">
+
+                <!-- Card 1 — 🇮🇳 The India Crisis -->
+                <div class="why-card why-card-wide reveal">
+                    <div class="why-icon">🇮🇳</div>
+                    <h3>THE INDIA CRISIS</h3>
+                    <div class="crisis-cost">₹22,00,00,000</div>
+                    <div class="crisis-cost-label">Average cost of one data breach in India. 2025.</div>
+                    <div class="stat-source" style="margin-bottom:16px;">Source: IBM Cost of a Data Breach Report 2025</div>
+
+                    <p>India recorded the highest average cost of a data breach at ₹22 crore in 2025 — a 13% rise from the previous year — according to IBM's Cost of a Data Breach Report. In 2025 alone, CERT-In handled over 29.44 lakh cyber incidents across the country. Between 2021 and mid-2025, India recorded more than 2.2 million cybersecurity incidents — averaging over 3,000 attacks every single day — with financial services, healthcare, telecom, and government platforms among the hardest hit.</p>
+                    <p>India recorded over 265 million cyberattacks in 2025, with financial losses from cyber fraud reaching ₹36,450 crore by February alone — with projections suggesting total annual losses exceeded ₹1.2 lakh crore.</p>
+
+                    <div class="stat-grid-4">
+                        <div class="stat-mini">
+                            <div class="stat-mini-num">3,000+</div>
+                            <div class="stat-mini-desc">Attacks per day on Indian organisations</div>
+                            <div class="stat-source">CERT-In</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-num">₹1.2L Cr</div>
+                            <div class="stat-mini-desc">Estimated total cyber fraud losses, 2025</div>
+                            <div class="stat-source">RBI Reports</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-num">29.44 Lakh</div>
+                            <div class="stat-mini-desc">Incidents handled by CERT-In in 2025</div>
+                            <div class="stat-source">CERT-In Annual Report</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-num">263 Days</div>
+                            <div class="stat-mini-desc">Average time Indian orgs take to detect a breach</div>
+                            <div class="stat-source">IBM Report 2025</div>
+                        </div>
+                    </div>
+
+                    <div class="compliance-threat-block">
+                        <p>The <span class="glossary-trigger" data-term="dpdpa">Digital Personal Data Protection Act</span> took partial effect on 13 November 2025, with full enforcement by May 2027 — and penalties extending up to ₹250 crore per violation. Failure to notify the Data Protection Board and affected individuals of a breach alone can attract fines up to ₹200 crore.</p>
+                    </div>
+
+                    <div class="sector-breakdown">
+                        <h4>Sector breakdown of malware cases in India:</h4>
+                        <div class="sector-row"><span class="sector-label">Healthcare</span><div class="sector-bar"><div class="sector-fill" style="width:21%"></div></div><span class="sector-pct">21%</span></div>
+                        <div class="sector-row"><span class="sector-label">BFSI</span><div class="sector-bar"><div class="sector-fill" style="width:19%"></div></div><span class="sector-pct">19%</span></div>
+                        <div class="sector-row"><span class="sector-label">Hospitality</span><div class="sector-bar"><div class="sector-fill" style="width:17%"></div></div><span class="sector-pct">17%</span></div>
+                        <div class="sector-row"><span class="sector-label">Education</span><div class="sector-bar"><div class="sector-fill" style="width:15%"></div></div><span class="sector-pct">15%</span></div>
+                        <div class="sector-row"><span class="sector-label">MSMEs</span><div class="sector-bar"><div class="sector-fill" style="width:7%"></div></div><span class="sector-pct">7%</span></div>
+                        <div class="stat-source">India Cyber Threat Report 2025 — DSCI &amp; Seqrite</div>
+                    </div>
+
+                    <div class="incident-log">
+                        <h4>Real breach timeline:</h4>
+                        <div class="incident-item">
+                            <span class="incident-year">2023</span>
+                            <span class="incident-desc">ICMR breach — 815 million Indian citizens' data stolen, Aadhaar numbers, passport details, COVID test records listed for sale on dark web</span>
+                        </div>
+                        <div class="incident-item">
+                            <span class="incident-year">2024</span>
+                            <span class="incident-desc">BFSI sector — 4.1 million attacks monthly Jan–Jun. DDoS on peak banking operations up 172%</span>
+                        </div>
+                        <div class="incident-item">
+                            <span class="incident-year">2025</span>
+                            <span class="incident-desc">Sant Parmanand Hospital, Delhi — servers hacked, patient records and financial data compromised</span>
+                        </div>
+                        <div class="incident-item">
+                            <span class="incident-year">2025</span>
+                            <span class="incident-desc">ICICI Bank vendor portal — Bashe ransomware group claimed credential harvesting via supply chain access</span>
+                        </div>
+                        <div class="incident-item">
+                            <span class="incident-year">2025</span>
+                            <span class="incident-desc">Multiple banks and fintech platforms — surge in AI-generated phishing campaigns targeting employees</span>
+                        </div>
+                        <div class="incident-item">
+                            <span class="incident-year">2026</span>
+                            <span class="incident-desc">World Economic Forum ranks cybersecurity as India's #1 national risk — above climate and conflict</span>
+                        </div>
+                    </div>
+
+                    <div class="crisis-closing"><strong>The question is no longer IF your organisation will be targeted. It's whether you'll know about it before the attacker does.</strong></div>
+                </div>
+
+                <!-- Card 2 — ⚔️ The Old Way Is Broken -->
+                <div class="why-card reveal">
+                    <div class="why-icon">⚔️</div>
+                    <h3>THE OLD WAY IS BROKEN</h3>
+                    <div class="oldway-opening">Your annual pentest left 95% of the year completely untested.</div>
+
+                    <div class="oldway-problem">
+                        <h4>THEY SLEEP. ATTACKERS DON'T.</h4>
+                        <p>Traditional manual red team engagements in India cost between ₹3 lakh and ₹8 lakh and take 3–4 weeks to complete. By the time the report lands on your desk, new vulnerabilities have already been published. A new CVE disclosed on Monday is weaponised by Thursday. Your red team engagement ended last quarter.</p>
+                    </div>
+
+                    <div class="oldway-problem">
+                        <h4>AUTOMATED SCANNERS MISS THE REAL THREATS.</h4>
+                        <p>In India, the top three initial causes of data breaches were phishing at 18%, third-party vendor and supply chain compromise at 17%, and vulnerability exploitation — none of which automated scanners reliably detect in realistic attack chain context. Scanner tools find known CVEs. They don't find business logic flaws, AD misconfiguration chains, or multi-step lateral movement paths that require reasoning — not just pattern matching.</p>
+                    </div>
+
+                    <div class="oldway-problem">
+                        <h4>A SNAPSHOT ISN'T A SHIELD.</h4>
+                        <p>Most Indian organisations take 263 days on average to detect and contain a breach — while <span class="glossary-trigger" data-term="certin">CERT-In</span> now mandates reporting within 6 hours of detection. That gap between detection reality and regulatory requirement is where liability lives. A pentest done once a year covers approximately 14 days of your 365-day exposure window. The other 351 days, you're flying blind.</p>
+                    </div>
+
+                    <div class="oldway-problem">
+                        <h4>ENTERPRISE PRICING. STARTUP REALITY.</h4>
+                        <p>Enterprise IT firms charge 3 to 5 times more than boutique firms for the same scope, while freelance pentesters charge 30 to 50 percent less but typically don't provide audit-grade reports. Most Indian startups and mid-market companies are caught in the middle — priced out of quality security, and underserved by cheap alternatives.</p>
+                    </div>
+
+                    <div class="coverage-timeline">
+                        <div class="tl-month tl-active">JAN <span class="tl-label">Pentest</span></div>
+                        <div class="tl-month tl-active">FEB <span class="tl-label">Report</span></div>
+                        <div class="tl-month tl-dark">MAR</div>
+                        <div class="tl-month tl-dark">APR</div>
+                        <div class="tl-month tl-dark">MAY</div>
+                        <div class="tl-month tl-dark">JUN</div>
+                        <div class="tl-month tl-dark">JUL</div>
+                        <div class="tl-month tl-dark">AUG</div>
+                        <div class="tl-month tl-dark">SEP</div>
+                        <div class="tl-month tl-dark">OCT</div>
+                        <div class="tl-month tl-dark">NOV</div>
+                        <div class="tl-month tl-dark">DEC</div>
+                    </div>
+                    <div class="tl-footer">This is your current security posture. <strong>95% dark.</strong></div>
+                </div>
+
+                <!-- Card 3 — 🤖 The REDSTRYKE Way -->
+                <div class="why-card reveal">
+                    <div class="why-icon">🤖</div>
+                    <h3>THE REDSTRYKE WAY</h3>
+                    <div class="redstryke-opening">11 autonomous AI agents. One continuous kill-chain. Zero gaps in your coverage. Zero weeks of waiting.</div>
+
+                    <div class="capability-grid">
+                        <div class="capability-block">
+                            <div class="cap-num text-green">&lt; 4 MINUTES</div>
+                            <div class="cap-desc">Time from engagement start to first finding. Manual firms: 2–4 weeks to first report.</div>
+                        </div>
+                        <div class="capability-block">
+                            <div class="cap-num text-red">24 / 7 / 365</div>
+                            <div class="cap-desc">Agents operate without pause. New CVE disclosed? Correlated to your stack within 24 hours.</div>
+                        </div>
+                        <div class="capability-block">
+                            <div class="cap-num text-amber">8 ATTACK SURFACES</div>
+                            <div class="cap-desc">Web, API, Cloud, AD, Network, Social Engineering, Wireless, Supply Chain — all tested in every engagement.</div>
+                        </div>
+                        <div class="capability-block">
+                            <div class="cap-num text-green">CERT-In · RBI · SEBI · DPDPA</div>
+                            <div class="cap-desc">Every report is regulation-ready. Report format accepted for <span class="glossary-trigger" data-term="certin">CERT-In</span> audits. ATT&CK mapped. Board-ready.</div>
+                        </div>
+                        <div class="capability-block">
+                            <div class="cap-num text-red">80% CHEAPER</div>
+                            <div class="cap-desc">Than enterprise red team firms. ₹74,999 for what TCS/Infosys charges ₹5L–₹10L for.</div>
+                        </div>
+                        <div class="capability-block">
+                            <div class="cap-num text-green">MITRE ATT&CK</div>
+                            <div class="cap-desc">Every finding mapped to adversary TTP. Not just "vulnerability found." Full kill-chain context.</div>
+                        </div>
+                    </div>
+
+                    <div class="ooda-loop">
+                        <span class="ooda-step">OBSERVE</span>
+                        <span class="ooda-arrow">→</span>
+                        <span class="ooda-step">ORIENT</span>
+                        <span class="ooda-arrow">→</span>
+                        <span class="ooda-step">DECIDE</span>
+                        <span class="ooda-arrow">→</span>
+                        <span class="ooda-step">ACT</span>
+                        <span class="ooda-feedback">↑__________________________|</span>
+                        <span class="ooda-sub">Continuous. Self-correcting. Never stops.</span>
+                    </div>
+
+                    <div class="redstryke-closing">We don't simulate security. We simulate the attacker — completely, continuously, autonomously. Then hand you the map of everything they found.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 — HOW IT WORKS (Tabs) -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">HOW IT <span class="text-red">WORKS</span></h2>
+            <p class="section-subtitle">Autonomous attack pipeline — from recon to report, no human in the loop</p>
+
+            <div class="tabs-container reveal">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" onclick="switchTab('tab-recon', this)">01 RECONNAISSANCE <small>Under 4 min</small></button>
+                    <button class="tab-btn" onclick="switchTab('tab-planning', this)">02 ATTACK PLANNING <small>AI kill-chain</small></button>
+                    <button class="tab-btn" onclick="switchTab('tab-execution', this)">03 EXECUTION <small>Multi-vector</small></button>
+                    <button class="tab-btn" onclick="switchTab('tab-reporting', this)">04 REPORTING <small>CERT-In ready</small></button>
+                </div>
+
+                <!-- TAB 1: RECONNAISSANCE -->
+                <div class="tab-panel active" id="tab-recon">
+                    <div class="tab-subtitle">Under 4 minutes from trigger to intelligence</div>
+                    <p class="tab-intro">The moment an engagement begins, the Scout Agent and Fingerprint Agent are simultaneously deployed. No human queues a scan. No analyst decides what to test first. The AI determines initial vectors automatically from the target scope.</p>
+
+                    <div class="terminal-steps" id="terminal-recon">
+                        <div class="term-line" data-delay="0">[00:00] TARGET SCOPE INGESTED</div>
+                        <div class="term-line" data-delay="200">        Domains, IP ranges, cloud accounts, org name loaded</div>
+                        <div class="term-line" data-delay="600">[00:12] SUBDOMAIN ENUMERATION INITIATED</div>
+                        <div class="term-line" data-delay="800">        Passive DNS, certificate transparency logs, brute-force via curated wordlists</div>
+                        <div class="term-line" data-delay="1000">        Tools: Amass, subfinder, dnsx</div>
+                        <div class="term-line" data-delay="1400">[00:31] PORT &amp; SERVICE SCANNING</div>
+                        <div class="term-line" data-delay="1600">        Full TCP/UDP sweep, banner grabbing, service version fingerprinting</div>
+                        <div class="term-line" data-delay="1800">        Tools: Nmap, masscan, httpx</div>
+                        <div class="term-line" data-delay="2200">[01:14] TECHNOLOGY STACK FINGERPRINTING</div>
+                        <div class="term-line" data-delay="2400">        Web frameworks, CMS, CDN, WAF detection, cloud provider identification</div>
+                        <div class="term-line" data-delay="2600">        Tools: Wappalyzer, nuclei, whatweb</div>
+                        <div class="term-line" data-delay="3000">[01:52] OSINT SWEEP</div>
+                        <div class="term-line" data-delay="3200">        LinkedIn employee enumeration, GitHub secret scanning, Pastebin credential leaks</div>
+                        <div class="term-line" data-delay="3400">        Tools: theHarvester, GitLeaks, SpiderFoot</div>
+                        <div class="term-line" data-delay="3800">[02:33] CVE CORRELATION ENGINE</div>
+                        <div class="term-line" data-delay="4000">        Identified stack versions cross-referenced against NVD, ExploitDB, CISA KEV</div>
+                        <div class="term-line" data-delay="4200">        Critical CVEs flagged for immediate escalation</div>
+                        <div class="term-line" data-delay="4600">[03:41] ATTACK SURFACE MAP GENERATED</div>
+                        <div class="term-line" data-delay="4800">        Full graph of: exposed services → versions → known CVEs → exploit availability</div>
+                        <div class="term-line" data-delay="5200">[03:58] RECON PHASE COMPLETE</div>
+                        <div class="term-line" data-delay="5400">        Scout Agent reports to shared tactical memory. All findings available to all agents.</div>
+                    </div>
+
+                    <div class="tab-deliverables">
+                        <h4>What you get from this phase:</h4>
+                        <div class="deliverable-grid">
+                            <span class="deliverable">✓ Complete external attack surface inventory</span>
+                            <span class="deliverable">✓ All exposed services with version numbers</span>
+                            <span class="deliverable">✓ Credential leaks linked to your org on dark web</span>
+                            <span class="deliverable">✓ GitHub / code repository secret exposure</span>
+                            <span class="deliverable">✓ Employee data available to attackers via OSINT</span>
+                            <span class="deliverable">✓ Every CVE applicable to your current tech stack</span>
+                            <span class="deliverable">✓ Severity-ranked list of what to hit first</span>
+                        </div>
+                    </div>
+
+                    <div class="case-study">
+                        <h4>WHAT THIS FINDS THAT HUMANS MISS</h4>
+                        <p>In a 2025 engagement with an Indian fintech, REDSTRYKE's Scout Agent discovered a forgotten staging subdomain — <code>staging-api.company.in</code> — exposed to the internet, running an unpatched version of a popular API gateway with a critical CVE published 11 days earlier. The internal team had no record of this subdomain. The CISO was unaware it existed. It had full database read access. Recon phase found it in 94 seconds.</p>
+                    </div>
+                </div>
+
+                <!-- TAB 2: ATTACK PLANNING -->
+                <div class="tab-panel" id="tab-planning">
+                    <div class="tab-subtitle">AI generates the kill-chain. No human guesswork.</div>
+                    <p class="tab-intro">The Analyst Agent and Planner Agent receive the full recon output from shared tactical memory. The LLM commander — a locally-running red team AI trained on MITRE ATT&CK, CVE databases, and adversary playbooks — generates a prioritised kill-chain strategy specific to the target's exact tech stack, exposed services, and identified weaknesses.</p>
+
+                    <div class="planning-decision-tree">
+                        <div class="tree-input">INPUT: Attack surface map from Recon phase</div>
+                        <div class="tree-input tree-sub">Target: Indian fintech SaaS, AWS-hosted, React frontend, Node.js API, PostgreSQL, AD for internal staff</div>
+
+                        <div class="tree-node tree-analyst">
+                            <div class="tree-node-title">ANALYST AGENT CORRELATES:</div>
+                            <div class="tree-children">
+                                <div class="tree-leaf">├── CVE-2024-XXXXX on API gateway → RCE possible</div>
+                                <div class="tree-leaf">├── S3 bucket misconfiguration → data exposure</div>
+                                <div class="tree-leaf">├── AD: Kerberoastable service accounts identified</div>
+                                <div class="tree-leaf">├── LinkedIn: 3 employees with admin in job title</div>
+                                <div class="tree-leaf">└── GitHub: API key committed 8 months ago, not rotated</div>
+                            </div>
+                        </div>
+
+                        <div class="tree-node tree-planner">
+                            <div class="tree-node-title">PLANNER AGENT GENERATES KILL-CHAIN:</div>
+                            <div class="chain-block">
+                                <div class="chain-title">CHAIN A — External to Cloud</div>
+                                <div class="chain-step">Step 1: Exploit API gateway CVE → RCE on EC2 instance</div>
+                                <div class="chain-step">Step 2: Enumerate AWS IAM roles from metadata service</div>
+                                <div class="chain-step">Step 3: Escalate via misconfigured S3 cross-account trust</div>
+                                <div class="chain-step">Step 4: Access production database backup bucket</div>
+                            </div>
+                            <div class="chain-block">
+                                <div class="chain-title">CHAIN B — Phishing to AD Takeover</div>
+                                <div class="chain-step">Step 1: Spear-phish 3 identified admin employees</div>
+                                <div class="chain-step">Step 2: Credential harvest → VPN access</div>
+                                <div class="chain-step">Step 3: Kerberoast service accounts → crack offline</div>
+                                <div class="chain-step">Step 4: Pass-the-hash → lateral movement to DC</div>
+                                <div class="chain-step">Step 5: DCSync → all domain credentials extracted</div>
+                            </div>
+                            <div class="chain-block">
+                                <div class="chain-title">CHAIN C — API Logic Abuse</div>
+                                <div class="chain-step">Step 1: IDOR testing on all identified API endpoints</div>
+                                <div class="chain-step">Step 2: Auth bypass attempts on payment flow</div>
+                                <div class="chain-step">Step 3: Mass assignment on user object</div>
+                                <div class="chain-step">Step 4: Business logic flaw → access other users' data</div>
+                            </div>
+                        </div>
+
+                        <div class="tree-footer">
+                            <div class="tree-compare"><div class="tree-compare-item">Traditional tester generates attack plan: <strong>2–3 days</strong></div></div>
+                            <div class="tree-compare"><div class="tree-compare-item">REDSTRYKE Planner generates attack plan: <strong>&lt; 45 seconds</strong></div></div>
+                            <div class="tree-compare"><div class="tree-compare-item">Attack paths considered by human: <strong>15–30</strong></div></div>
+                            <div class="tree-compare tree-compare-win"><div class="tree-compare-item">Attack paths considered by REDSTRYKE: <strong>Hundreds, simultaneously</strong></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: EXECUTION -->
+                <div class="tab-panel" id="tab-execution">
+                    <div class="tab-subtitle">Autonomous multi-vector attack — web, API, cloud, AD, human layer</div>
+                    <p class="tab-intro">Eight specialised executor agents are deployed simultaneously across all identified attack paths. Each agent operates independently, reports findings back to shared tactical memory in real time, and adapts when an attack path is blocked — automatically pivoting to alternative techniques.</p>
+
+                    <div class="execution-feed" id="execution-feed">
+                        <div class="exec-line" data-delay="0"><span class="exec-tag tag-exploit">EXPLOIT-1</span> Testing CVE-2024-XXXXX on api.target.in:8080</div>
+                        <div class="exec-line" data-delay="600"><span class="exec-tag tag-exploit">EXPLOIT-1</span> Payload delivered — awaiting response...</div>
+                        <div class="exec-line" data-delay="1400"><span class="exec-tag tag-exploit">EXPLOIT-1</span> <span class="exec-success">✓ RCE CONFIRMED</span> — shell spawned on 10.0.1.44</div>
+                        <div class="exec-line" data-delay="2000"><span class="exec-tag tag-pivot">PIVOT-1</span> Internal subnet enumeration initiated: 10.0.0.0/16</div>
+                        <div class="exec-line" data-delay="2600"><span class="exec-tag tag-pivot">PIVOT-1</span> Discovered: 14 internal hosts, 3 Windows DCs</div>
+                        <div class="exec-line" data-delay="3200"><span class="exec-tag tag-pivot">PIVOT-1</span> SMB signing disabled on 6 hosts — noting for relay</div>
+                        <div class="exec-line" data-delay="3800"><span class="exec-tag tag-payload">PAYLOAD-1</span> Generating phishing lure for 3 identified admins</div>
+                        <div class="exec-line" data-delay="4400"><span class="exec-tag tag-payload">PAYLOAD-1</span> Target: Rohan Mehta, IT Manager, Mumbai office</div>
+                        <div class="exec-line" data-delay="5000"><span class="exec-tag tag-exploit">EXPLOIT-2</span> Kerberoasting DC01.target.local</div>
+                        <div class="exec-line" data-delay="5600"><span class="exec-tag tag-exploit">EXPLOIT-2</span> <span class="exec-success">✓ 4 service account hashes extracted</span></div>
+                        <div class="exec-line" data-delay="6200"><span class="exec-tag tag-cloud">CLOUD-1</span> AWS metadata service queried from RCE shell</div>
+                        <div class="exec-line" data-delay="6800"><span class="exec-tag tag-cloud">CLOUD-1</span> <span class="exec-critical">✓ CRITICAL: Production DB backup accessible — PUBLIC</span></div>
+                        <div class="exec-line" data-delay="7400"><span class="exec-tag tag-evasion">EVASION-1</span> Defender signature triggered — adapting technique</div>
+                        <div class="exec-line" data-delay="8000"><span class="exec-tag tag-evasion">EVASION-1</span> Switching to LOLBAS execution: certutil.exe</div>
+                        <div class="exec-line" data-delay="8600"><span class="exec-tag tag-evasion">EVASION-1</span> <span class="exec-success">✓ Evasion successful — EDR blind to current activity</span></div>
+                        <div class="exec-line" data-delay="9200"><span class="exec-tag tag-analyst">ANALYST</span> <span class="exec-critical">CRITICAL FINDING: Production DB backup public</span></div>
+                        <div class="exec-line" data-delay="9800"><span class="exec-tag tag-analyst">ANALYST</span> <span class="exec-critical">CRITICAL FINDING: Domain admin path confirmed</span></div>
+                    </div>
+
+                    <div class="agent-grid">
+                        <div class="agent-card"><div class="agent-name">EXPLOIT-1</div><div class="agent-desc">Vulnerability exploitation agent — deploys weaponised CVE payloads against confirmed vulnerable services.</div></div>
+                        <div class="agent-card"><div class="agent-name">EXPLOIT-2</div><div class="agent-desc">Active Directory agent — Kerberoasting, AS-REP roasting, Pass-the-Hash, DCSync, BloodHound-style attack path enumeration.</div></div>
+                        <div class="agent-card"><div class="agent-name">PAYLOAD-1</div><div class="agent-desc">Polymorphic payload agent — generates custom payloads, mutates to bypass AV/EDR signatures. Never repeats.</div></div>
+                        <div class="agent-card"><div class="agent-name">PIVOT-1</div><div class="agent-desc">Lateral movement agent — network enumeration from any internal foothold, credential reuse, SMB relay, WMI execution.</div></div>
+                        <div class="agent-card"><div class="agent-name">CLOUD-1</div><div class="agent-desc">Cloud attack agent — AWS/Azure/GCP misconfiguration exploitation, IAM privilege escalation, metadata service theft.</div></div>
+                        <div class="agent-card"><div class="agent-name">SOCIAL-1</div><div class="agent-desc">Social engineering agent — generates spear-phishing emails customised for identified employees using OSINT data.</div></div>
+                        <div class="agent-card"><div class="agent-name">EVASION-1</div><div class="agent-desc">Defence evasion agent — monitors for EDR/AV detection, adapts in real time, clears logs, uses LOLBAS techniques.</div></div>
+                        <div class="agent-card"><div class="agent-name">PERSIST-1</div><div class="agent-desc">Persistence agent — establishes simulated persistence: scheduled tasks, registry run keys, web shells.</div></div>
+                    </div>
+
+                    <div class="stat-block"><span class="stat-block-label">Real statistic:</span> Ransomware-as-a-service groups claimed 53% more victims globally in 2025, with supply chain and vendor portal attacks becoming the preferred entry point for India's BFSI sector — exactly the attack paths REDSTRYKE tests.</div>
+                </div>
+
+                <!-- TAB 4: REPORTING -->
+                <div class="tab-panel" id="tab-reporting">
+                    <div class="tab-subtitle">CERT-In ready. MITRE ATT&CK mapped. Board-presentable.</div>
+                    <p class="tab-intro">The Debrief Agent aggregates every finding from all executor agents across the entire engagement. It produces three documents simultaneously — an executive report for the board, a technical report for the security team, and a compliance evidence package for your auditors. All three are generated autonomously. All three are ready within hours of engagement completion.</p>
+
+                    <div class="doc-tabs">
+                        <button class="doc-tab-btn active" onclick="switchDocTab('doc-exec', this)">[ EXECUTIVE SUMMARY ]</button>
+                        <button class="doc-tab-btn" onclick="switchDocTab('doc-tech', this)">[ TECHNICAL FINDINGS ]</button>
+                        <button class="doc-tab-btn" onclick="switchDocTab('doc-compliance', this)">[ COMPLIANCE PACKAGE ]</button>
+                    </div>
+
+                    <div class="doc-panel active" id="doc-exec">
+                        <div class="doc-header">REDSTRYKE ENGAGEMENT REPORT</div>
+                        <div class="doc-field"><span class="doc-label">Engagement Type:</span> ASSAULT</div>
+                        <div class="doc-field"><span class="doc-label">Risk Rating:</span> <span class="text-red">🔴 CRITICAL</span></div>
+
+                        <div class="doc-section">
+                            <div class="doc-section-title">FINDINGS SUMMARY</div>
+                            <div class="doc-bars">
+                                <div class="doc-bar-row"><span class="doc-bar-label">Critical</span><div class="doc-bar"><div class="doc-bar-fill bar-critical" style="width:80%"></div></div><span>4</span></div>
+                                <div class="doc-bar-row"><span class="doc-bar-label">High</span><div class="doc-bar"><div class="doc-bar-fill bar-high" style="width:70%"></div></div><span>7</span></div>
+                                <div class="doc-bar-row"><span class="doc-bar-label">Medium</span><div class="doc-bar"><div class="doc-bar-fill bar-medium" style="width:50%"></div></div><span>13</span></div>
+                                <div class="doc-bar-row"><span class="doc-bar-label">Low</span><div class="doc-bar"><div class="doc-bar-fill bar-low" style="width:30%"></div></div><span>6</span></div>
+                            </div>
+                        </div>
+
+                        <div class="doc-section">
+                            <div class="doc-section-title">MOST CRITICAL FINDING</div>
+                            <p>Production database backup accessible publicly via misconfigured S3 bucket — no authentication required. Full customer PII exposed. <span class="glossary-trigger" data-term="dpdpa">DPDPA</span> liability: Up to ₹200 crore.</p>
+                        </div>
+
+                        <div class="doc-section">
+                            <div class="doc-section-title">ATTACK PATH TO FULL DOMAIN COMPROMISE</div>
+                            <div class="attack-path">External RCE → IAM escalation → AD foothold → DCSync → All credentials extracted</div>
+                            <div class="attack-path-time">Time from start to domain admin: <strong>4 hours 17 minutes</strong></div>
+                        </div>
+
+                        <div class="doc-section">
+                            <div class="doc-section-title">BUSINESS IMPACT</div>
+                            <ul>
+                                <li>Estimated breach cost if exploited: ₹18–22 crore (IBM India avg)</li>
+                                <li>Regulatory fine exposure: ₹200 crore (DPDPA) + RBI penalties</li>
+                                <li>Reputational impact: Customer trust, media exposure, client loss</li>
+                            </ul>
+                        </div>
+
+                        <div class="doc-section">
+                            <div class="doc-section-title">TOP 3 IMMEDIATE ACTIONS REQUIRED</div>
+                            <ol>
+                                <li>Remediate S3 bucket ACL — estimated fix time: 2 hours</li>
+                                <li>Patch API gateway CVE-2024-XXXXX — patch available</li>
+                                <li>Reset and rotate all Kerberoastable service accounts</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="doc-panel" id="doc-tech">
+                        <div class="finding-block">
+                            <div class="finding-block-header">FINDING-001</div>
+                            <div class="finding-field"><span class="doc-label">Severity:</span> <span class="text-red">CRITICAL (CVSS 9.8)</span></div>
+                            <div class="finding-field"><span class="doc-label">Title:</span> Unauthenticated RCE via API Gateway</div>
+                            <div class="finding-field"><span class="doc-label">ATT&CK ID:</span> <span class="text-green">T1190</span> — Exploit Public-Facing Application</div>
+                            <div class="finding-field"><span class="doc-label">CVE:</span> CVE-2024-XXXXX</div>
+                            <div class="finding-desc">The API gateway running version X.X.X is vulnerable to remote code execution via a crafted POST request to the /api/v2/upload endpoint. No authentication required. Full server compromise. Lateral movement to internal network. Cloud credential access via metadata service.</div>
+                            <div class="finding-field"><span class="doc-label">Remediation:</span> Update API gateway to version X.X.X or above. Estimated fix time: 4 hours. Retest available within REDSTRYKE engagement window.</div>
+                        </div>
+                    </div>
+
+                    <div class="doc-panel" id="doc-compliance">
+                        <div class="compliance-mappings">
+                            <h4>Included compliance mappings:</h4>
+                            <ul>
+                                <li>✓ CERT-In Cybersecurity Audit Policy Guidelines (July 2025)</li>
+                                <li>✓ RBI IT Framework — control deficiency evidence</li>
+                                <li>✓ SEBI CSCRF — mapped findings to framework controls</li>
+                                <li>✓ DPDPA Article mapping — personal data exposure findings</li>
+                                <li>✓ ISO 27001:2022 Annex A control gaps</li>
+                                <li>✓ OWASP Top 10 coverage evidence</li>
+                            </ul>
+                            <p class="compliance-suitable">Suitable for submission to: CERT-In auditors · RBI inspection teams · SEBI compliance reviews · ISO 27001 auditors · SOC 2 Type II evidence packages · Investor security due diligence</p>
+                        </div>
+                    </div>
+
+                    <div class="delivery-timeline">
+                        <div class="dt-item"><span class="dt-time">T+0:04</span><span class="dt-desc">First finding identified</span></div>
+                        <div class="dt-item"><span class="dt-time">T+6:00</span><span class="dt-desc">All attack chains executed</span></div>
+                        <div class="dt-item"><span class="dt-time">T+12:00</span><span class="dt-desc">Executive report complete</span></div>
+                        <div class="dt-item"><span class="dt-time">T+24:00</span><span class="dt-desc">Full technical report delivered</span></div>
+                        <div class="dt-item"><span class="dt-time">T+48:00</span><span class="dt-desc">Compliance evidence package ready</span></div>
+                    </div>
+                    <div class="dt-label">← RETEST WINDOW OPENS</div>
+
+                    <div class="post-report">
+                        <h4>WHAT HAPPENS AFTER THE REPORT:</h4>
+                        <ul>
+                            <li>✓ 30–60 day retest window — fix it and we verify</li>
+                            <li>✓ Debrief call — walk through every critical finding</li>
+                            <li>✓ Remediation Q&A — ask our team anything</li>
+                            <li>✓ SIEGE clients: next cycle begins automatically. Your findings feed the next cycle — agents learn your environment over time.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY INDIA CHOSE REDSTRYKE (COMPARISON) -->
+    <section class="section section-dark" id="why-india">
+        <div class="container">
+            <h2 class="section-title">WHY INDIA CHOSE <span class="text-red">REDSTRYKE</span></h2>
+            <p class="section-subtitle">Compare us against every option in the market. We win on every axis.</p>
+            <div class="comparison-table-wrapper reveal">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Cheap Scan<br>Tools</th>
+                            <th>Boutique<br>Pentest Firms</th>
+                            <th>Big IT Firms<br>(TCS/Infosys)</th>
+                            <th class="col-redstrke">REDSTRYKE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="comp-label">Price</td>
+                            <td>₹16K–₹50K</td>
+                            <td>₹75K–₹5L</td>
+                            <td>₹10L–₹50L</td>
+                            <td class="col-redstrke"><strong>₹24,999–₹75K</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">Speed</td>
+                            <td>Hours</td>
+                            <td>2–4 weeks</td>
+                            <td>4–8 weeks</td>
+                            <td class="col-redstrke"><strong>72 hrs – 7 days</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">Operates 24/7</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">Full Kill-Chain</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="yes">✅</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">AI Autonomous</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">CERT-In Ready</td>
+                            <td class="no">✗</td>
+                            <td class="yes">✅</td>
+                            <td class="yes">✅</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">DPDPA Mapping</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="yes">✅</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">Live Dashboard</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="yes">✅</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">WhatsApp Alerts</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                        <tr>
+                            <td class="comp-label">EMI Available</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="col-redstrke yes">✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2 class="section-title">THE PRICE OF A BREACH: <span class="text-red">₹22 CRORE.</span><br>
+                THE PRICE OF REDSTRYKE: <span class="text-green">₹24,999.</span></h2>
+                <p class="section-subtitle">India's only AI-powered autonomous red team. No hidden costs. No retainer traps. No wasted weeks.<br>
+                Pure offensive AI at a price every Indian business can defend.</p>
+                <div class="compliance-badges">
+                    <span class="badge glossary-trigger" data-term="certin">CERT-In Aligned</span>
+                    <span class="badge glossary-trigger" data-term="rbi">RBI IT Framework</span>
+                    <span class="badge glossary-trigger" data-term="sebi">SEBI CSCRF</span>
+                    <span class="badge glossary-trigger" data-term="dpdpa">DPDPA Ready</span>
+                    <span class="badge">ISO 27001 Mapped</span>
+                    <span class="badge">SOC 2 Mapped</span>
+                    <span class="badge">GST Invoice Provided</span>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- CARD 1: RECON -->
+                <div class="pricing-card card-recon reveal">
+                    <div class="pricing-card-glow"></div>
+                    <div class="pricing-tier">RECON</div>
+                    <p class="pricing-tagline">Know exactly where you're exposed</p>
+                    <div class="pricing-amount">
+                        <span class="price">₹24,999</span>
+                        <span class="price-period">ONE-TIME ENGAGEMENT</span>
+                    </div>
+                    <p class="pricing-gst">+ 18% GST</p>
+                    <div class="pricing-delivery">⚡ DELIVERED IN 72 HOURS</div>
+                    <ul class="pricing-features">
+                        <li><span>External attack surface discovery</span></li>
+                        <li><span>Web application testing (OWASP Top 10 + AI extended)</span></li>
+                        <li><span>Subdomain enumeration, exposed ports &amp; services</span></li>
+                        <li><span>OSINT sweep — credential leaks, dark web mentions</span></li>
+                        <li><span>Automated CVE correlation against your tech stack</span></li>
+                        <li><span>Executive summary + full technical report</span></li>
+                        <li><span>MITRE ATT&CK mapped findings</span></li>
+                        <li><span>CERT-In compliance ready report format</span></li>
+                        <li><span>30-day free retest window included</span></li>
+                    </ul>
+                    <p class="pricing-compare">Manual firms charge ₹50,000–₹1,50,000 for this.<br>We do it in 72 hours at half the price.</p>
+                    <a href="#" class="btn btn-outline-red btn-block" onclick="openRazorpay('recon')">[ DEPLOY RECON — ₹24,999 ]</a>
+                    <p class="pricing-ideal">Startups · Early-stage companies · First security audit · Investor due diligence</p>
+                </div>
+
+                <!-- CARD 2: ASSAULT (Hero) -->
+                <div class="pricing-card card-assault hero-card reveal" style="transition-delay:0.1s">
+                    <div class="pricing-card-glow"></div>
+                    <div class="pricing-badge pulse-badge">🔴 MOST POPULAR — INDIA'S CHOICE</div>
+                    <div class="pricing-tier">ASSAULT</div>
+                    <p class="pricing-tagline">Full kill-chain simulation before real attackers do it</p>
+                    <div class="pricing-amount">
+                        <span class="price">₹74,999</span>
+                        <span class="price-period">ONE-TIME ENGAGEMENT</span>
+                    </div>
+                    <p class="pricing-gst">+ 18% GST</p>
+                    <div class="pricing-savings">SAVE ₹2,25,000+ vs manual red team firms</div>
+                    <div class="pricing-delivery">⚡ DELIVERED IN 5–7 BUSINESS DAYS</div>
+                    <ul class="pricing-features">
+                        <li><span>Everything in RECON, plus —</span></li>
+                        <li><span>Full autonomous kill-chain simulation</span></li>
+                        <li><span>Active Directory + internal network attack paths</span></li>
+                        <li><span>Cloud security (AWS / Azure / GCP misconfigs, IAM)</span></li>
+                        <li><span>API security deep dive — every endpoint tested</span></li>
+                        <li><span>Social engineering simulation (phishing campaign)</span></li>
+                        <li><span>Lateral movement &amp; privilege escalation attempts</span></li>
+                        <li><span>Live dashboard access during engagement</span></li>
+                        <li><span>Full executive + technical report + remediation roadmap</span></li>
+                        <li><span>Compliance: SOC 2 · ISO 27001 · CERT-In · DPDPA</span></li>
+                        <li><span>60-day free retest window</span></li>
+                        <li><span>1 debrief call (60 min, video)</span></li>
+                    </ul>
+                    <p class="pricing-compare">Manual red teams: ₹3,00,000–₹8,00,000 · 3–4 weeks<br>REDSTRYKE: ₹74,999 · 5 days · More coverage · Deeper findings</p>
+                    <a href="#" class="btn btn-red btn-block btn-large" onclick="openRazorpay('assault')">[ LAUNCH ASSAULT — ₹74,999 ]</a>
+                    <p class="pricing-ideal">Fintech · SaaS Platforms · Series A/B Startups · SOC 2 Compliance · ISO 27001</p>
+                </div>
+
+                <!-- CARD 3: SIEGE -->
+                <div class="pricing-card card-siege reveal" style="transition-delay:0.2s">
+                    <div class="pricing-card-glow"></div>
+                    <div class="pricing-badge badge-continuous">⚙️ CONTINUOUS PROTECTION</div>
+                    <div class="pricing-tier">SIEGE</div>
+                    <p class="pricing-tagline">Attackers never stop. Neither do we.</p>
+                    <div class="pricing-billing-toggle">
+                        <button class="billing-btn active" onclick="toggleBilling('monthly', this)">Monthly</button>
+                        <button class="billing-btn" onclick="toggleBilling('annual', this)">Annual</button>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="price" id="siege-price">₹49,999</span>
+                        <span class="price-period" id="siege-period">/ MONTH</span>
+                    </div>
+                    <div class="pricing-savings" id="siege-savings" style="display:none;">SAVE ₹1,00,000 — 2 MONTHS FREE</div>
+                    <p class="pricing-gst">+ 18% GST · Auto-renewing · Cancel anytime</p>
+                    <div class="pricing-delivery siege-delivery">🔴 LIVE WITHIN 48 HOURS OF ONBOARDING</div>
+                    <ul class="pricing-features">
+                        <li><span>Everything in ASSAULT, running continuously —</span></li>
+                        <li><span>Weekly autonomous red team cycle, all 8 attack surfaces</span></li>
+                        <li><span>New CVE matched to your environment within 24hrs of disclosure</span></li>
+                        <li><span>Critical alerts via WhatsApp + Email + Slack within 1 hour</span></li>
+                        <li><span>Persistent live engagement dashboard — always updated</span></li>
+                        <li><span>Weekly findings report — delivered every Monday, 9 AM IST</span></li>
+                        <li><span>Monthly executive briefing call (60 min)</span></li>
+                        <li><span>DPDPA · RBI IT Framework · SEBI CSCRF compliance tracking</span></li>
+                        <li><span>Unlimited retests — fix and verify instantly</span></li>
+                        <li><span>Priority SLA — critical findings escalated in 2 hours</span></li>
+                    </ul>
+                    <p class="pricing-compare">Enterprise retainers (TCS / Infosys / HCL): ₹10L–₹25L/month<br>REDSTRYKE SIEGE: ₹49,999/month — same coverage, 80% less cost</p>
+                    <a href="#" class="btn btn-ember btn-block" onclick="openRazorpay('siege')">[ BEGIN SIEGE — ₹49,999/MO ]</a>
+                    <p class="pricing-ideal">BFSI · Healthcare · E-commerce · Enterprises · RBI/SEBI regulated companies</p>
+                </div>
+            </div>
+
+            <!-- ROI CALCULATOR -->
+            <div class="roi-calculator reveal">
+                <h4>📊 ESTIMATE YOUR ROI</h4>
+                <div class="roi-row">
+                    <span class="roi-label">Your estimated data size</span>
+                    <input type="range" class="roi-slider" id="roiSlider" min="1" max="100" value="30" oninput="updateROI()">
+                    <span class="roi-value" id="roiSize">30 GB</span>
+                </div>
+                <div class="roi-row">
+                    <span class="roi-label">Industry</span>
+                    <select class="roi-slider" id="roiIndustry" onchange="updateROI()" style="appearance:auto;padding:4px 8px;font-family:var(--font-mono);font-size:0.7rem;background:#0a0b0e;color:var(--text);border:1px solid #1e2230;border-radius:4px;">
+                        <option value="fintech">Fintech / BFSI</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="saas">SaaS / Technology</option>
+                        <option value="govt">Government / PSU</option>
+                    </select>
+                </div>
+                <div class="roi-result" id="roiResult">
+                    <div class="roi-result-number" id="roiAmount">₹12,50,000</div>
+                    <div class="roi-result-label">Estimated breach cost you're defending against with REDSTRYKE</div>
+                </div>
+            </div>
+
+            <!-- ENTERPRISE TIER LINK -->
+            <div class="enterprise-tier-link reveal">
+                <p>Need a fully custom engagement? <strong>CLASSIFIED tier</strong> — bespoke scope, dedicated agent swarm, OT/ICS testing, APT emulation, physical intrusion, white-label reports, NDA protection.</p>
+                <a href="#" class="btn btn-outline-red" onclick="openClassifiedForm()">[ REQUEST CLASSIFIED BRIEFING ]</a>
+            </div>
+
+            <!-- CARD 4: CLASSIFIED -->
+            <div class="classified-banner reveal">
+                <div class="classified-content">
+                    <div class="classified-tier">CLASSIFIED <span class="redacted">[REDACTED]</span></div>
+                    <p class="classified-tagline">For threats that don't follow playbooks</p>
+                    <div class="classified-price">
+                        <span class="price">STARTS AT ₹5,00,000</span>
+                        <span class="price-period">CUSTOM SCOPED · FULLY BESPOKE</span>
+                    </div>
+                    <div class="classified-grid">
+                        <div class="classified-col">
+                            <ul class="pricing-features">
+                                <li><span>Full custom engagement scope</span></li>
+                                <li><span>OT/ICS and SCADA environment testing</span></li>
+                                <li><span>Ransomware attack simulation</span></li>
+                                <li><span>APT (Advanced Persistent Threat) full emulation</span></li>
+                                <li><span>Physical intrusion simulation</span></li>
+                            </ul>
+                        </div>
+                        <div class="classified-col">
+                            <ul class="pricing-features">
+                                <li><span>Dedicated agent swarm — not shared infrastructure</span></li>
+                                <li><span>White-label reports for your clients</span></li>
+                                <li><span>NDA + signed engagement letter</span></li>
+                                <li><span>SLA-backed 2-hour critical response</span></li>
+                                <li><span>Human security lead oversight on every phase</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="classified-audience">Large banks · Hospitals · Defence contractors · Critical infrastructure · Government · PSUs</p>
+                    <a href="#" class="btn btn-outline-red btn-block" onclick="openClassifiedForm()">[ REQUEST CLASSIFIED BRIEFING ]</a>
+                </div>
+            </div>
+
+            <!-- ADD-ONS -->
+            <div class="addons-section">
+                <h3 class="addons-title"><span class="text-green">EXPAND YOUR ARSENAL</span></h3>
+                <div class="addons-grid">
+                    <div class="addon-card reveal">
+                        <span class="addon-name">Ransomware Simulation</span>
+                        <span class="addon-price">₹12,999</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('Ransomware Simulation')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">Dark Web Monitoring (3 months)</span>
+                        <span class="addon-price">₹8,999</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('Dark Web Monitoring')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">Physical Intrusion Sim</span>
+                        <span class="addon-price">₹24,999</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('Physical Intrusion Sim')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">Wireless / RF Assessment</span>
+                        <span class="addon-price">₹9,999</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('Wireless / RF Assessment')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">Insider Threat Simulation</span>
+                        <span class="addon-price">₹7,999</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('Insider Threat Simulation')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">DPDPA / RBI Compliance Gap</span>
+                        <span class="addon-price">₹6,999</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('DPDPA / RBI Compliance Gap')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">Extra Retest Window (30 days)</span>
+                        <span class="addon-price">₹3,999</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('Extra Retest Window')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">Boardroom Briefing Deck</span>
+                        <span class="addon-price">₹2,499</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('Boardroom Briefing Deck')">[ ADD ]</button>
+                    </div>
+                    <div class="addon-card reveal">
+                        <span class="addon-name">WhatsApp Live Alerts</span>
+                        <span class="addon-price">₹1,999/mo</span>
+                        <button class="btn btn-sm" onclick="openAddonForm('WhatsApp Live Alerts')">[ ADD ]</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRICING FOOTER -->
+            <div class="pricing-footer">
+                <p>All prices in INR + 18% GST</p>
+                <p>GST Invoice issued within 24 hours of payment</p>
+                <p>WhatsApp us directly: <a href="https://wa.me/917977671140?text=Hi, I'm interested in REDSTRYKE services" class="text-green" target="_blank" rel="noopener">[ OPEN WHATSAPP ]</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">⧩ REDSTRYKE</div>
+                    <p>India's most advanced autonomous AI red team. Continuous offensive security for Indian businesses.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>TIERS</h4>
+                    <a href="#pricing">RECON — ₹24,999</a>
+                    <a href="#pricing">ASSAULT — ₹74,999</a>
+                    <a href="#pricing">SIEGE — ₹49,999/mo</a>
+                    <a href="#pricing">CLASSIFIED — Custom</a>
+                </div>
+                <div class="footer-col">
+                    <h4>COMPLIANCE</h4>
+                    <a href="#" class="glossary-trigger" data-term="certin">CERT-In</a>
+                    <a href="#" class="glossary-trigger" data-term="rbi">RBI IT Framework</a>
+                    <a href="#" class="glossary-trigger" data-term="sebi">SEBI CSCRF</a>
+                    <a href="#" class="glossary-trigger" data-term="dpdpa">DPDPA</a>
+                </div>
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <a href="https://wa.me/917977671140" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="mailto:ops@redstryke.in">ops@redstryke.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                🇮🇳 REDSTRYKE TACTICAL SYSTEMS — INDIA<br>
+                GST: 27AAJCT1234A1ZX · Registered in India · All services subject to Indian law
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- GLOSSARY TOOLTIP -->
+<div class="glossary-tooltip" id="glossaryTooltip"></div>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/917977671140?text=Hi, I'm interested in REDSTRYKE services" target="_blank" class="whatsapp-float" id="whatsappFloat" title="Chat with us on WhatsApp" rel="noopener">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
+<!-- CLASSIFIED MODAL -->
+<div class="modal-overlay" id="classifiedModal">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="modal-title">CLASSIFIED BRIEFING REQUEST</span>
+            <button class="modal-close" onclick="closeModal('classifiedModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="classifiedForm" onsubmit="submitClassified(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Organization</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-input" placeholder="+91">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Engagement Description</label>
+                    <textarea class="form-input" rows="4" placeholder="Describe your requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-red btn-block">[ SUBMIT REQUEST ]</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ADD-ON MODAL -->
+<div class="modal-overlay" id="addonModal">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="modal-title">ADD TO ENGAGEMENT</span>
+            <button class="modal-close" onclick="closeModal('addonModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="addonForm" onsubmit="submitAddon(event)">
+                <p>Add-on: <strong id="addonNameDisplay"></strong></p>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-input" placeholder="+91">
+                </div>
+                <button type="submit" class="btn btn-red btn-block">[ SUBMIT ]</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

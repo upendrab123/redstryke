@@ -1,0 +1,1 @@
+"""Unit tests — test each module in isolation with mocked dependencies."""

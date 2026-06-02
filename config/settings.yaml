@@ -1,0 +1,136 @@
+# Master configuration — values here are overridden by .env
+# Edit .env for secrets; edit this file for behaviour tuning.
+
+groq:
+  planner_model: "llama-3.3-70b-versatile"
+  evaluator_model: "llama-3.3-70b-versatile"
+  reporter_model: "llama-3.3-70b-versatile"
+  max_tokens: 4096
+  temperature:
+    planner: 0.85
+    evaluator: 0.1
+    reporter: 0.4
+  rate_limit:
+    requests_per_minute: 30
+    retry_attempts: 3
+    retry_wait_seconds: 2
+
+attack:
+  scan_depths:
+    quick:
+      duration_minutes: 3
+      garak_probes: ["lmrc"]
+      pyrit_scenarios: 1
+      max_attacks: 10
+    standard:
+      duration_minutes: 10
+      garak_probes: ["lmrc", "knownbadsignatures", "promptinject"]
+      pyrit_scenarios: 2
+      max_attacks: 50
+    deep:
+      duration_minutes: 30
+      garak_probes: ["lmrc", "knownbadsignatures", "promptinject", "xss"]
+      pyrit_scenarios: 5
+      max_attacks: 100
+  timeout_seconds: 10
+  max_concurrent: 3
+  multi_turn_max_rounds: 5
+
+memory:
+  embedding_model: "all-MiniLM-L6-v2"
+  top_k_retrieval: 5
+  similarity_threshold: 0.75
+  chroma_collection: "attack_memory"
+
+severity:
+  levels: ["critical", "high", "medium", "low", "info"]
+  critical_keywords:
+    - "training data"
+    - "system prompt"
+    - "jailbreak successful"
+    - "harmful instructions"
+    - "PII exposed"
+  scoring_weights:
+    critical: 10
+    high: 5
+    medium: 2
+    low: 1
+    info: 0
+
+report:
+  sections:
+    - executive_summary
+    - risk_matrix
+    - findings_detail
+    - regulatory_mapping
+    - recommendations
+    - methodology
+    - appendix_raw_results
+  regulatory_frameworks:
+    - name: "EU AI Act"
+      articles: ["Article 9", "Article 10", "Article 15", "Article 72"]
+    - name: "NIST AI RMF"
+      functions: ["GOVERN", "MAP", "MEASURE", "MANAGE"]
+    - name: "ISO 42001"
+      clauses: ["6.1", "8.4", "9.1"]
+
+web_scanner:
+  enabled: true
+  request_timeout: 10
+  max_concurrent_requests: 10
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  scan_depths:
+    quick:
+      max_urls: 30
+      max_exposure_checks: 15
+      max_injection_targets: 5
+      scan_scripts: false
+      scan_privacy: false
+    standard:
+      max_urls: 100
+      max_exposure_checks: 40
+      max_injection_targets: 20
+      scan_scripts: true
+      scan_privacy: false
+    deep:
+      max_urls: 500
+      max_exposure_checks: 80
+      max_injection_targets: 100
+      scan_scripts: true
+      scan_privacy: true
+  categories:
+    - xss_reflected
+    - xss_stored
+    - sql_injection
+    - ssti
+    - command_injection
+    - ssrf
+    - open_redirect
+    - cors_misconfiguration
+    - missing_csp
+    - missing_hsts
+    - missing_x_frame_options
+    - missing_content_type_options
+    - cookie_no_httponly
+    - cookie_no_secure
+    - cookie_no_samesite
+    - exposed_git
+    - exposed_env
+    - exposed_backup
+    - exposed_admin_panel
+    - exposed_debug_endpoint
+    - credential_leak
+    - api_key_exposed
+    - pii_exposed
+    - tracking_script
+    - basic_auth_insecure
+    - default_credentials
+    - insecure_form
+    - directory_listing
+    - server_info_disclosure
+
+logging:
+  level: "INFO"
+  format: "json"
+  rotation: "daily"
+  retention_days: 30

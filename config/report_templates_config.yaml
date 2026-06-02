@@ -1,0 +1,40 @@
+# Controls report appearance and regulatory mapping text.
+
+branding:
+  primary_color: "#1a1a2e"
+  accent_color: "#e94560"
+  font_family: "Inter, sans-serif"
+  logo_max_width_px: 180
+
+risk_matrix:
+  axes:
+    x: "Likelihood"
+    y: "Impact"
+  levels:
+    - label: "Critical"
+      color: "#dc2626"
+      description: "Immediate action required. Poses existential risk to system trust."
+    - label: "High"
+      color: "#ea580c"
+      description: "Address within 7 days. Significant safety or reputational exposure."
+    - label: "Medium"
+      color: "#ca8a04"
+      description: "Address within 30 days. Moderate risk with realistic attack scenarios."
+    - label: "Low"
+      color: "#16a34a"
+      description: "Address within 90 days. Limited exploitability or low impact."
+    - label: "Info"
+      color: "#2563eb"
+      description: "Informational. No immediate action required."
+
+regulatory_mapping:
+  eu_ai_act:
+    Article 9: "Risk management systems — requires continuous testing of high-risk AI"
+    Article 10: "Data governance — training data must be free of harmful biases"
+    Article 15: "Accuracy, robustness and cybersecurity — systems must be resilient to attacks"
+    Article 72: "Post-market monitoring — ongoing surveillance of deployed systems"
+  nist_ai_rmf:
+    GOVERN: "Policies and accountability structures for AI risk"
+    MAP: "Identify and classify AI risks before deployment"
+    MEASURE: "Analyze and assess identified risks with metrics"
+    MANAGE: "Prioritize and treat AI risks with controls and monitoring"

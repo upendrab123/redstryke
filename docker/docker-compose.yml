@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  red-teamer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: redstryke:latest
+    container_name: ai-red-teamer
+    ports:
+      - "8501:8501"
+    volumes:
+      # Persist all data outside the container
+      - ../data/chroma_db:/app/data/chroma_db
+      - ../data/sqlite:/app/data/sqlite
+      - ../data/reports:/app/data/reports
+      - ../data/logs:/app/data/logs
+      - ../data/attack_library:/app/data/attack_library
+    env_file:
+      - ../.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

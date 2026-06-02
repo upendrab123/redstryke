@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDSTRYKE — Operator Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- URGENCY BAR -->
+    <div class="urgency-bar">
+        <div class="urgency-track">
+            <span class="urgency-item">🔴 INDIA ALERT: Average data breach cost in India hit ₹22 CRORE in 2026 (IBM Report)</span>
+            <span class="urgency-item">🔴 70% of breached Indian orgs paid ransom — The Hindu, 2025</span>
+            <span class="urgency-item">🟡 CERT-In now mandates annual security audits for all regulated entities</span>
+            <span class="urgency-item">🔴 DPDPA penalties: up to ₹250 crore per violation</span>
+            <span class="urgency-item">Are you protected?</span>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <div class="logo-icon-small">⧩</div>
+                    <span class="logo-text-nav">REDSTRYKE</span>
+                </a>
+            </div>
+            <div class="nav-right" id="dashboard-nav-right">
+                <div class="nav-user" style="position:relative;">
+                    <div class="nav-avatar" onclick="toggleUserMenu()">OP</div>
+                    <div class="nav-user-dropdown" id="userMenu">
+                        <a href="/dashboard">My Profile</a>
+                        <a href="/dashboard">My Engagements</a>
+                        <a href="#" onclick="showTab('settings')">Settings</a>
+                        <button onclick="signOut()">[ SIGN OUT ]</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard-page">
+        <div class="dashboard-welcome">WELCOME BACK, OPERATOR <span class="dashboard-operator-name" id="dash-name">[USER]</span></div>
+        <div class="dashboard-account-info" id="dash-info">Loading operator profile...</div>
+
+        <!-- Action Cards -->
+        <div class="dashboard-cards">
+            <a href="#" class="dashboard-action-card" onclick="openRazorpay('recon')">
+                <h3>🔍 BOOK RECON</h3>
+                <p>External attack surface discovery</p>
+                <span class="price-tag">₹24,999</span>
+            </a>
+            <a href="#" class="dashboard-action-card" onclick="openRazorpay('assault')">
+                <h3>⚔️ BOOK ASSAULT</h3>
+                <p>Full kill-chain simulation</p>
+                <span class="price-tag">₹74,999</span>
+            </a>
+            <a href="#" class="dashboard-action-card" onclick="openClassifiedForm()">
+                <h3>📋 REQUEST BRIEFING</h3>
+                <p>Custom enterprise engagement</p>
+                <span class="price-tag">Contact us</span>
+            </a>
+        </div>
+
+        <!-- Tabs -->
+        <div class="dashboard-tabs" style="display:flex;gap:8px;margin-bottom:24px;">
+            <button class="btn btn-red" onclick="showTab('inquiry')" id="tab-inquiry-btn">[ SERVICE INQUIRY ]</button>
+            <button class="btn btn-ghost" onclick="showTab('settings')" id="tab-settings-btn">[ SETTINGS ]</button>
+        </div>
+
+        <!-- Service Inquiry Tab -->
+        <div class="card" id="tab-inquiry" style="display:block;">
+            <div class="card-header">
+                <span class="card-title">SERVICE INQUIRY</span>
+            </div>
+            <div class="card-body">
+                <form onsubmit="submitInquiry(event)">
+                    <div class="form-group">
+                        <label class="form-label">TIER OF INTEREST</label>
+                        <select class="form-input" id="inquiry-tier">
+                            <option value="RECON">RECON — ₹24,999</option>
+                            <option value="ASSAULT">ASSAULT — ₹74,999</option>
+                            <option value="SIEGE">SIEGE — ₹49,999/mo</option>
+                            <option value="CLASSIFIED">CLASSIFIED — Custom</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">MESSAGE</label>
+                        <textarea class="form-input" id="inquiry-message" rows="4" placeholder="Tell us about your security needs..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-red">[ SUBMIT INQUIRY ]</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div class="card" id="tab-settings" style="display:none;">
+            <div class="card-header">
+                <span class="card-title">ACCOUNT SETTINGS</span>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" id="settings-name" placeholder="Operator callsign">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Organization</label>
+                    <input type="text" class="form-input" id="settings-org" placeholder="Unit">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-input" id="settings-phone" placeholder="+91">
+                </div>
+                <button class="btn btn-red" onclick="updateProfile()">[ UPDATE PROFILE ]</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLASSIFIED MODAL -->
+    <div class="modal-overlay" id="classifiedModal">
+        <div class="modal">
+            <div class="modal-header">
+                <span class="modal-title">CLASSIFIED BRIEFING REQUEST</span>
+                <button class="modal-close" onclick="closeModal('classifiedModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="submitClassified(event)">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Organization</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Engagement Description</label>
+                        <textarea class="form-input" rows="4" placeholder="Describe your requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-red btn-block">[ SUBMIT REQUEST ]</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I'm interested in REDSTRYKE services" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="/static/app.js"></script>
+    <script>
+        document.querySelector('.urgency-track').innerHTML += document.querySelector('.urgency-track').innerHTML;
+        loadDashboardProfile();
+
+        function showTab(tab) {
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                if (el.id.startsWith('tab-') && !el.id.endsWith('-btn')) {
+                    el.style.display = 'none';
+                }
+            });
+            document.querySelectorAll('[id$="-btn"]').forEach(b => {
+                b.className = 'btn btn-ghost';
+            });
+
+            document.getElementById('tab-' + tab).style.display = 'block';
+            document.getElementById('tab-' + tab + '-btn').className = 'btn btn-red';
+        }
+
+        async function loadDashboardProfile() {
+            try {
+                const resp = await fetch('/api/me');
+                if (resp.ok) {
+                    const data = await resp.json();
+                    const name = data.full_name || data.email || 'OPERATOR';
+                    document.getElementById('dash-name').textContent = name.toUpperCase();
+                    document.getElementById('dash-info').textContent =
+                        data.organization + ' · ' + (data.role || 'Operator');
+                    document.querySelector('.nav-avatar').textContent = name.substring(0, 2).toUpperCase();
+                    if (data.full_name) document.getElementById('settings-name').value = data.full_name;
+                    if (data.organization) document.getElementById('settings-org').value = data.organization;
+                    if (data.phone) document.getElementById('settings-phone').value = data.phone;
+                }
+            } catch (e) {
+                document.getElementById('dash-info').textContent = 'Operator — REDSTRYKE';
+            }
+        }
+
+        async function submitInquiry(e) {
+            e.preventDefault();
+            const tier = document.getElementById('inquiry-tier').value;
+            const message = document.getElementById('inquiry-message').value;
+            try {
+                await fetch('/api/inquiries', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ tier, message }),
+                });
+                alert('Inquiry submitted. We will contact you within 24 hours.');
+                document.getElementById('inquiry-message').value = '';
+            } catch (e) {
+                alert('Failed to submit. Please try again.');
+            }
+        }
+
+        async function updateProfile() {
+            const name = document.getElementById('settings-name').value;
+            const org = document.getElementById('settings-org').value;
+            const phone = document.getElementById('settings-phone').value;
+            try {
+                await fetch('/api/me', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ full_name: name, organization: org, phone }),
+                });
+                alert('Profile updated');
+                loadDashboardProfile();
+            } catch (e) {
+                alert('Failed to update.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+# Attack categories with metadata.
+# The planner uses this to build engagement-specific attack plans.
+
+categories:
+  prompt_injection:
+    name: "Prompt Injection"
+    description: "Injecting instructions through user input to override system prompts"
+    severity_potential: "critical"
+    garak_probes: ["promptinject"]
+    pyrit_compatible: true
+    high_risk_domains: ["finance", "healthcare", "legal", "government"]
+
+  jailbreak:
+    name: "Jailbreak"
+    description: "Using roleplay, hypotheticals, or character framing to bypass safety"
+    severity_potential: "high"
+    garak_probes: ["lmrc", "atkgen", "knownbadsignatures"]
+    pyrit_compatible: true
+    high_risk_domains: ["all"]
+
+  data_leakage:
+    name: "Data & PII Leakage"
+    description: "Extracting training data, system prompts, or other users' information"
+    severity_potential: "critical"
+    garak_probes: ["leakreplay", "knownbadsignatures"]
+    pyrit_compatible: true
+    high_risk_domains: ["finance", "healthcare", "legal"]
+
+  hallucination_exploitation:
+    name: "Hallucination Exploitation"
+    description: "Inducing confident false outputs in high-stakes contexts"
+    severity_potential: "high"
+    garak_probes: ["lmrc"]
+    pyrit_compatible: true
+    high_risk_domains: ["healthcare", "legal", "finance"]
+
+  unsafe_content:
+    name: "Unsafe Content Generation"
+    description: "Generating harmful, illegal, or policy-violating content"
+    severity_potential: "high"
+    garak_probes: ["lmrc", "knownbadsignatures", "xss"]
+    pyrit_compatible: true
+    high_risk_domains: ["all"]
+
+  agent_misuse:
+    name: "Agent Action Misuse"
+    description: "Triggering unintended real-world actions in agentic systems"
+    severity_potential: "critical"
+    garak_probes: []
+    pyrit_compatible: true
+    high_risk_domains: ["all"]
+    notes: "Only applies to systems with tool/function calling enabled"
+
+  encoding_evasion:
+    name: "Encoding & Obfuscation Evasion"
+    description: "Using base64, leet-speak, or other encodings to bypass filters"
+    severity_potential: "medium"
+    garak_probes: ["encoding"]
+    pyrit_compatible: true
+    high_risk_domains: ["all"]
+
+  multi_turn_erosion:
+    name: "Multi-Turn Boundary Erosion"
+    description: "Gradually shifting model behaviour across a conversation"
+    severity_potential: "high"
+    garak_probes: []
+    pyrit_compatible: true
+    high_risk_domains: ["all"]
+    notes: "Requires PyRIT multi-turn orchestrator — not detectable in single-shot tests"
+
+  # ── Web Application Vulnerability Categories ──────────────────
+  xss:
+    name: "Cross-Site Scripting (XSS)"
+    description: "Injecting client-side scripts into web pages viewed by other users"
+    severity_potential: "high"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "xss_reflected"
+
+  sql_injection:
+    name: "SQL Injection"
+    description: "Injecting SQL queries through user input to manipulate databases"
+    severity_potential: "critical"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "sql_injection"
+
+  ssti:
+    name: "Server-Side Template Injection"
+    description: "Injecting template expressions to execute code on the server"
+    severity_potential: "critical"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "ssti"
+
+  command_injection:
+    name: "Command Injection"
+    description: "Injecting operating system commands through user input"
+    severity_potential: "critical"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "command_injection"
+
+  ssrf:
+    name: "Server-Side Request Forgery"
+    description: "Making the server send requests to internal or restricted resources"
+    severity_potential: "high"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "ssrf"
+
+  cors_misconfig:
+    name: "CORS Misconfiguration"
+    description: "Incorrect cross-origin resource sharing policies allowing cross-domain data access"
+    severity_potential: "medium"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["finance", "healthcare"]
+    web_check: "cors_misconfiguration"
+
+  security_headers:
+    name: "Missing Security Headers"
+    description: "Absence of HTTP security headers increasing attack surface"
+    severity_potential: "medium"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "security_headers"
+
+  credential_exposure:
+    name: "Credential & Secret Exposure"
+    description: "API keys, tokens, passwords exposed in client-side code or public paths"
+    severity_potential: "critical"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "credential_leak"
+
+  path_exposure:
+    name: "Sensitive Path Exposure"
+    description: "Exposed .git, .env, backups, admin panels, and debug endpoints"
+    severity_potential: "high"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "exposed_paths"
+
+  pii_exposure:
+    name: "PII & Data Exposure"
+    description: "Personal identifiable information leaked in web responses"
+    severity_potential: "high"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["finance", "healthcare", "legal"]
+    web_check: "pii_exposed"
+
+  open_redirect:
+    name: "Open Redirect"
+    description: "Unvalidated redirect parameters allowing phishing attacks"
+    severity_potential: "medium"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["all"]
+    web_check: "open_redirect"
+
+  auth_bypass:
+    name: "Authentication Weakness"
+    description: "Weak authentication mechanisms including missing cookie flags, default credentials"
+    severity_potential: "high"
+    garak_probes: []
+    pyrit_compatible: false
+    high_risk_domains: ["finance", "healthcare", "government"]
+    web_check: "auth"

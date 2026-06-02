@@ -1,0 +1,1 @@
+"""Integration tests — test the full pipeline against a local mock target."""
